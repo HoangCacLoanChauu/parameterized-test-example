@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite level">
+    <!-- tên project -->
+    <!--
+    see examples at http://testng.org/doc/documentation-main.html#testng-xml
+
+    <suite-files>
+        <suite-file path="./junit-suite.xml" />
+    </suite-files>
+
+    <test name="TimeOut">
+        <classes>
+            <class name="test.timeout.TimeOutTest" />
+            <class name="test.timeout.TimeOutFromXmlTest"/>
+            <class name="test.timeout.TimeOutThreadLocalSampleTest"/>
+        </classes>
+    </test>
+    -->
+  
+    <parameter name = "Parameter-suite-level" value="Value suite level"/>
+    <!--        Test ONE    -->
+    <test name="Test One"> 
+        <!-- name: tên biến truyền vào, 
+        value: giá trị truyền vào -->
+             <classes>
+            <class name = "com.chauhoang.test.ParameterizedTest">
+            <methods>
+                <include name="TestOne"/>
+            </methods>
+            </class>
+        </classes>
+
+    </test>
+    
+    <!--        Test TWO    -->
+    <test name="Test Two"> 
+        <!-- name: tên biến truyền vào, 
+        value: giá trị truyền vào -->
+        <parameter name = "Parameter-test-two" value="value test 2"/>
+        <classes>
+            <class name = "com.chauhoang.test.ParameterizedTest">
+            <methods>
+                <include name="TestTwo"/>
+            </methods>
+            </class>
+        </classes>
+
+    </test>
+    
+    <!--        Test THREE    -->
+    <test name="Test Three"> 
+        <!-- name: tên biến truyền vào, 
+        value: giá trị truyền vào -->
+        <parameter name = "Parameter-test-three" value="value test 3"/>
+        <parameter name = "Parameter-suite-level" value="Overiding value test suite"/>
+        <classes>
+            <class name = "com.chauhoang.test.ParameterizedTest">
+            <methods>
+                <include name="TestThree"/>
+            </methods>
+            </class>
+        </classes>
+
+    </test>
+    
+    
+
+</suite>
